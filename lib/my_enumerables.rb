@@ -27,7 +27,7 @@ class Array
       if temp_element
         elements << temp_element
       else
-        elements << element
+        return self
       end
     end
     elements
