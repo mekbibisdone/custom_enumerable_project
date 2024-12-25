@@ -7,5 +7,16 @@ end
 # your enumerable module will have access
 # to this method
 class Array
-  # Define my_each here
+  def my_each
+    elements = []
+    self.each do |element|
+      temp_element = yield(element)
+      if temp_element
+        elements << temp_element
+      else
+        elements << element
+      end
+    end
+    elements
+  end
 end
