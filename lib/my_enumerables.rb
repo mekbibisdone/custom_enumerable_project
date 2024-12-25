@@ -1,5 +1,18 @@
 module Enumerable
-  # Your code goes here
+  def my_each_with_index
+    index = 0
+    elements = []
+    for element in self
+      temp = yield(element,index)
+      if temp
+        elements << temp
+      else
+        return self
+      end
+      index += 1
+    end
+    elements
+  end
 end
 
 # You will first have to define my_each
