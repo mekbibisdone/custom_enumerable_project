@@ -9,7 +9,7 @@ end
 class Array
   def my_each
     elements = []
-    self.each do |element|
+    for element in self
       temp_element = yield(element)
       if temp_element
         elements << temp_element
