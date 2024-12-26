@@ -13,6 +13,16 @@ module Enumerable
     end
     elements
   end
+  def my_select
+    matching_elements = []
+    for element in self
+      result = yield(element)
+      if result
+        matching_elements << element
+      end
+    end
+    matching_elements
+  end
 end
 
 # You will first have to define my_each
