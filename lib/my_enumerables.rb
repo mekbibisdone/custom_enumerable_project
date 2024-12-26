@@ -70,6 +70,13 @@ module Enumerable
     end
     elements
   end
+  def my_inject(initial_value = 0)
+    reduction = initial_value
+    for element in self
+      reduction = yield(reduction,element)
+    end
+    reduction
+  end
 end
 
 # You will first have to define my_each
