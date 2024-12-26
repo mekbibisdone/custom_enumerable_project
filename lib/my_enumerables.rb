@@ -63,6 +63,13 @@ module Enumerable
     end
     count
   end
+  def my_map
+    elements = []
+    for element in self
+      elements << yield(element)
+    end
+    elements
+  end
 end
 
 # You will first have to define my_each
