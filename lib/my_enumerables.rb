@@ -23,6 +23,15 @@ module Enumerable
     end
     matching_elements
   end
+  def my_all?
+    for element in self
+      result = yield(element)
+      if not result
+        return false
+      end
+    end
+    return true
+  end
 end
 
 # You will first have to define my_each
